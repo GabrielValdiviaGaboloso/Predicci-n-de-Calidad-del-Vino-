@@ -1,63 +1,67 @@
-🍷 Predicción de Calidad del Vino - Clasificación
-📚 Descripción del Proyecto
-Este proyecto se enfoca en predecir la calidad del vino tinto portugués “Vinho Verde” utilizando aprendizaje automático. Se trabaja con un dataset de clasificación multiclase, donde la calidad del vino (de 0 a 10) se ha simplificado en tres clases categóricas: bajo, medio y alto.
 
-Aunque el modelo es sencillo, el desafío reside en que el conjunto de datos está desbalanceado: la mayoría de los vinos tienen calidad media, lo que dificulta la predicción de las clases minoritarias (bajo y alto).
+# 🍷 Predicción de Calidad del Vino - Clasificación
 
-🧪 Variables del Dataset
-Entrada (características fisicoquímicas):
+## 📚 Descripción del Proyecto
 
-Acidez fija
+Este proyecto tiene como objetivo **predecir la calidad del vino tinto portugués “Vinho Verde”** a partir de características fisicoquímicas. El desafío principal radica en el **desbalance de clases**, ya que la mayoría de los vinos son de calidad media, mientras que los vinos de calidad baja o alta tienen muy pocas muestras.
 
-Acidez volátil
+Se trata de una tarea de **clasificación multiclase**, donde la variable `calidad` fue transformada en tres categorías: `bajo`, `medio` y `alto`.
 
-Ácido cítrico
+---
 
-Azúcar residual
+## 🧪 Variables del Dataset
 
-Cloruros
+**Variables de entrada (características fisicoquímicas):**
+1. Acidez fija  
+2. Acidez volátil  
+3. Ácido cítrico  
+4. Azúcar residual  
+5. Cloruros  
+6. Dióxido de azufre libre  
+7. Dióxido de azufre total  
+8. Densidad  
+9. pH  
+10. Sulfatos  
+11. Alcohol
 
-Dióxido de azufre libre
+**Variable de salida (objetivo):**
+- Calidad (convertida en: `bajo`, `medio`, `alto`)
 
-Dióxido de azufre total
+---
 
-Densidad
+## ⚙️ Modelos Evaluados
 
-pH
+Se compararon distintos modelos utilizando técnicas de clasificación supervisada:
 
-Sulfatos
+- **KNN Classifier**
+- **Logistic Regression**
+- **Random Forest (opcional si fue usado)**
 
-Alcohol
+Para cada modelo se evaluó:
 
-Salida (variable objetivo):
+- **Accuracy**
+- **Precision, Recall, F1-score**
+- **Matriz de Confusión**
+- **Curva ROC y AUC**
 
-Calidad (convertida en clases: bajo, medio, alto)
+---
 
-🤖 Modelos Evaluados
-Se compararon los siguientes modelos:
+## 📊 Resultados Obtenidos
 
-KNN Classifier
+### ✅ Mejor Modelo: Logistic Regression
+- **Accuracy:** `0.97`
+- Excelente rendimiento prediciendo la clase `medio`, que representa la mayoría del dataset.
+- Se confirmó su eficacia con la **curva ROC** y el **AUC**.
 
-Logistic Regression
+### ❌ Limitaciones:
+- Ningún modelo logró predecir correctamente las clases `bajo` o `alto`.
+- Esto se debe al **fuerte desbalance de clases**, lo que limita la capacidad de generalización para esas categorías.
 
-Random Forest (opcional, si fue evaluado también)
+---
 
-Se utilizó búsqueda de hiperparámetros, métricas de clasificación (accuracy, precision, recall, f1-score), matriz de confusión y curva ROC para evaluar el rendimiento de cada modelo.
+## 📈 Visualizaciones Incluidas
 
-📊 Resultados
-✅ Mejor Modelo: Logistic Regression
-Accuracy: 97%
+- ✅ Matriz de Confusión para cada modelo
+- ✅ Curva ROC por clase (`bajo`, `medio`, `alto`)
+- ✅ Comparación de accuracy entre modelos
 
-Excelente rendimiento al clasificar correctamente la clase “medio”.
-
-Soportado por curva ROC y AUC, mostrando un área elevada para esta clase.
-
-❌ Debilidad: Desbalance de Clases
-Ningún modelo logró predecir correctamente las clases "bajo" y "alto".
-
-Estas clases contienen muy pocas muestras, lo que dificulta su aprendizaje por parte del modelo.
-
-📈 Conclusión
-✔️ El modelo Logistic Regression es el más adecuado para este problema, especialmente si se desea predecir correctamente la clase dominante (medio).
-
-❌ Sin embargo, la clasificación de las clases minoritarias no es confiable, por lo tanto, el modelo no es robusto para todos los tipos de vino.
