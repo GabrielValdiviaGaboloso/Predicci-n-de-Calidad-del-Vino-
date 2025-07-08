@@ -1,4 +1,4 @@
-# Predicci-n-de-Calidad-del-Vino-
+# Prediccion-de-Calidad-del-Vino-
 Dataset de clasificación  de vinos
 Descripción:
 Este conjunto de datos está relacionado con las variantes tintas del vino portugués "Vinho Verde". Describe la cantidad de diversas sustancias químicas presentes en el vino y su efecto en su calidad. Los conjuntos de datos pueden considerarse como tareas de clasificación o regresión. Las clases están ordenadas y no equilibradas (por ejemplo, hay muchos más vinos normales que excelentes o deficientes). Su tarea consiste en predecir la calidad del vino utilizando los datos proporcionados.
