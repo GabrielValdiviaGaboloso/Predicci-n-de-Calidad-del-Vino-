@@ -1,38 +1,63 @@
-# Prediccion-de-Calidad-del-Vino-
-Dataset de clasificación  de vinos
-Descripción:
-Este conjunto de datos está relacionado con las variantes tintas del vino portugués "Vinho Verde". Describe la cantidad de diversas sustancias químicas presentes en el vino y su efecto en su calidad. Los conjuntos de datos pueden considerarse como tareas de clasificación o regresión. Las clases están ordenadas y no equilibradas (por ejemplo, hay muchos más vinos normales que excelentes o deficientes). Su tarea consiste en predecir la calidad del vino utilizando los datos proporcionados.
+🍷 Predicción de Calidad del Vino - Clasificación
+📚 Descripción del Proyecto
+Este proyecto se enfoca en predecir la calidad del vino tinto portugués “Vinho Verde” utilizando aprendizaje automático. Se trabaja con un dataset de clasificación multiclase, donde la calidad del vino (de 0 a 10) se ha simplificado en tres clases categóricas: bajo, medio y alto.
 
-Un proyecto sencillo pero desafiante: anticipar la calidad del vino.
-La complejidad surge debido a que el conjunto de datos contiene menos muestras y presenta un alto desequilibrio.
-¿Puedes superar estos obstáculos y construir un buen modelo predictivo para clasificarlos?
+Aunque el modelo es sencillo, el desafío reside en que el conjunto de datos está desbalanceado: la mayoría de los vinos tienen calidad media, lo que dificulta la predicción de las clases minoritarias (bajo y alto).
 
-Este marco de datos contiene las siguientes columnas:
+🧪 Variables del Dataset
+Entrada (características fisicoquímicas):
 
-Variables de entrada (basadas en pruebas fisicoquímicas):\
-1 - acidez fija\
-2 - acidez volátil\
-3 - ácido cítrico\
-4 - azúcar residual\
-5 - cloruros\
-6 - dióxido de azufre libre\
-7 - dióxido de azufre total\
-8 - densidad\
-9 - pH\
-10 - sulfatos\
-11 - alcohol\
-Variable de salida (basada en datos sensoriales):\
-12 - calidad (puntuación entre 0 y 10)
+Acidez fija
 
+Acidez volátil
 
-🏁 Conclusión del Análisis
-✅ El mejor modelo evaluado fue Logistic Regression, con una precisión (Accuracy) del 97%. Este modelo mostró un rendimiento excelente al clasificar correctamente la clase "medio", que representa la gran mayoría de los datos.
+Ácido cítrico
 
-❌ Sin embargo, ningún modelo fue capaz de predecir correctamente las clases "bajo" o "alto", debido a un fuerte desbalance de clases. Estas clases tienen muy pocas muestras en comparación con la clase "medio", lo que limita la capacidad de generalización del modelo hacia esas categorías.
+Azúcar residual
 
-📈 La curva ROC y los valores de AUC confirmaron que Logistic Regression es muy eficaz para distinguir la clase "medio", pero tiene bajo poder discriminativo para las otras clases.
+Cloruros
 
-🛠️ Recomendaciones
-Aplicar técnicas de balanceo de clases como SMOTE o undersampling.
+Dióxido de azufre libre
 
-Recolectar más muestras para las clases minoritarias ("bajo" y "alto").
+Dióxido de azufre total
+
+Densidad
+
+pH
+
+Sulfatos
+
+Alcohol
+
+Salida (variable objetivo):
+
+Calidad (convertida en clases: bajo, medio, alto)
+
+🤖 Modelos Evaluados
+Se compararon los siguientes modelos:
+
+KNN Classifier
+
+Logistic Regression
+
+Random Forest (opcional, si fue evaluado también)
+
+Se utilizó búsqueda de hiperparámetros, métricas de clasificación (accuracy, precision, recall, f1-score), matriz de confusión y curva ROC para evaluar el rendimiento de cada modelo.
+
+📊 Resultados
+✅ Mejor Modelo: Logistic Regression
+Accuracy: 97%
+
+Excelente rendimiento al clasificar correctamente la clase “medio”.
+
+Soportado por curva ROC y AUC, mostrando un área elevada para esta clase.
+
+❌ Debilidad: Desbalance de Clases
+Ningún modelo logró predecir correctamente las clases "bajo" y "alto".
+
+Estas clases contienen muy pocas muestras, lo que dificulta su aprendizaje por parte del modelo.
+
+📈 Conclusión
+✔️ El modelo Logistic Regression es el más adecuado para este problema, especialmente si se desea predecir correctamente la clase dominante (medio).
+
+❌ Sin embargo, la clasificación de las clases minoritarias no es confiable, por lo tanto, el modelo no es robusto para todos los tipos de vino.
